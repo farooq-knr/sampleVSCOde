@@ -5,6 +5,9 @@
         "paths": {
             "c/lwc2": [
                 "lwc2/lwc2.js"
+            ],
+            "c/Lwc2": [
+                "Lwc2/Lwc2.js"
             ]
         }
     },
