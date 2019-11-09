@@ -1,0 +1,7 @@
+<aura:component extensible="true" >
+    <div class="slds-is-relative">
+        {!v.body}
+
+    </div>
+
+</aura:component>

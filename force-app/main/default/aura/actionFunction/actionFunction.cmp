@@ -1,0 +1,16 @@
+<aura:component controller="actionFunction" implements="force:appHostable">
+    <aura:attribute name="acc" type="Account" default="{ 'sobjectType': 'Account' }" />
+    <form>
+        <label class="slds-form-element__label" for="FirstName">First Name</label>
+        <lightning:inputField aura:id="AccountName" value="{!v.acc.Name}" class="slds-input" />
+
+        <lightning:inputField aura:id="AccountType" value="{!v.acc.Type}" />
+        <lightning:inputField aura:id="parentAccount" value="{!v.acc.ParentId}" />
+        <lightning:buttonGroup>
+
+            <lightning:button label="Save" onclick="{!c.save}" />
+
+        </lightning:buttonGroup>
+    
+    </form>
+</aura:component>

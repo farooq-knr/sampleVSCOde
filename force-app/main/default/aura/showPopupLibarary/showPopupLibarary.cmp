@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    
+    <lightning:overlayLibrary aura:id="overlayLib" />
+    <lightning:button label="Show Contact Popup" title="Show" onclick="{!c.handleShow}" />
+    {!v.body}
+
+</aura:component>

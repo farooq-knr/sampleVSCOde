@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableforallPageTypes">
+    
+    <aura:registerEvent name="cmpEvent" type="c:ComponentEvent"/>
+    <lightning:button label="Neutral" title="Neutral action" onclick="{!c.buttonClicked}"/>
+	This is child component
+</aura:component>

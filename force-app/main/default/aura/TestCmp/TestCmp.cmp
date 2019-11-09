@@ -1,0 +1,9 @@
+<aura:component extends="c:lib_baseComponent" implements="force:apphostable,flexipage:availableForAllPageTypes,force:hasRecordId">
+
+        <lightning:button label="Neutral" title="Neutral action" onclick="{! c.handleClick }"/>
+
+    <aura:attribute name="recordId" type="String" />
+    <lightning:button label="Edit Record" onclick="{!c.edit}"/>
+
+
+</aura:component>

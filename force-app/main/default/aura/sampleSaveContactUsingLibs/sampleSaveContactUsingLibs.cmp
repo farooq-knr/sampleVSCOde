@@ -1,0 +1,33 @@
+<aura:component controller="saveContactInfo" extends="c:lib_baseComponent" implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="con" type="contact" default="{'sObjectType':'Contact'}"/>
+    <lightning:button label="Open Model" title="openModel" variant="brand" onclick="{!c.doInit}"/>
+    <c:lib_modelComponent aura:id="uiModel">
+        <lightning:layout multipleRows="true">
+            <lightning:layoutItem padding="horizontal-small" size="12" largeDeviceSize="6" mediumDevicesize="6">
+                <lightning:input type="text" value="{!v.con.FirstName}" label="First Name" required="true" aura:id="validate"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="horizontal-small" size="12" largeDeviceSize="6" mediumDevicesize="6">
+                <lightning:input type="text" value="{!v.con.LastName}" label="Last Name" required="true" aura:id="validate"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="horizontal-small" size="12" largeDeviceSize="6" mediumDevicesize="6">
+                <lightning:input type="number" value="{!v.con.Phone}" label="Phone" required="true" aura:id="validate"/>
+            </lightning:layoutItem>
+             <lightning:layoutItem padding="horizontal-small" size="12" largeDeviceSize="6" mediumDevicesize="6">
+                <lightning:input type="text" value="{!v.con.Department}" label="Department" required="true" aura:id="validate"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+        <aura:set attribute="footer">
+            <footer class="slds-modal__footer">
+                <lightning:button variant="neutral" 
+                                  label="Cancel"
+                                  title="Cancel"
+                                  onclick="{! c.onClose }"/>
+                <lightning:button variant="brand" 
+                                  label="Save"
+                                  title="Save"
+                                  onclick="{! c.onSave }"/>
+            </footer>
+        </aura:set>
+    </c:lib_modelComponent>
+</aura:component>

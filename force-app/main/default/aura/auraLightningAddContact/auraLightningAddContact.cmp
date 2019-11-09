@@ -1,0 +1,50 @@
+<aura:component controller="accountContactController"  implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="account" type="Account" default="{}"/>
+    <aura:attribute name="contacts" type="Map[]" default="[]"/>
+    <aura:attribute name="isVisible" type="Boolean" default="false"/>
+    <lightning:layout>
+        <lightning:layoutItem padding="around-small" size="12" largeDeviceSize="6">
+            <lightning:input type="text" label="Name" value="{!v.account.Name}"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" size="12" largeDeviceSize="6">
+            <lightning:input type="number" label="Phone" value="{!v.account.Phone}"/>
+        </lightning:layoutItem>
+    </lightning:layout>  
+    <lightning:layout>
+        <lightning:layoutItem padding="around-small" size="12" largeDeviceSize="6">
+            <lightning:input type="number" label="Number of Location" value="{!v.account.NumberofLocations__c}"/>
+        </lightning:layoutItem>  
+    </lightning:layout>
+    <lightning:layout>
+        <lightning:layoutItem padding="around-small" size="12" largeDeviceSize="3">
+            <lightning:button variant="Neutral" label="Save" title="Base action" onclick="{!c.save}"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" size="12" largeDeviceSize="3">
+            <lightning:button variant="Neutral" label="Cancel" title="Base action" onclick="{!c.Cancel}"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" size="12" largeDeviceSize="3">
+            <lightning:button variant="Neutral" label="Add Contact" title="Base action" onclick="{!c.addContact}"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+   <aura:if isTrue="{!v.isVisible}">
+    <table>
+        <thead>
+        	<th>Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+        </thead>
+        <aura:iteration items="{!v.contacts}" var="cont">
+            <tr>
+                <td>
+                <lightning:input type="text" value="{!cont.firstName}"/></td>
+                <td><lightning:input type="text" value="{!cont.phone}"/></td>
+                <td><lightning:input type="text" value="{!cont.Email}"/></td>
+            </tr>
+        </aura:iteration>
+    </table>
+       <aura:set attribute="else">
+           Hello the table is not displayed
+       </aura:set>
+       </aura:if>
+</aura:component>

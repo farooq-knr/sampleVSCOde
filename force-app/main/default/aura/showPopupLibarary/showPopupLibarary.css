@@ -1,0 +1,6 @@
+.THIS .mymodal{
+     background-color: coral !important;
+     width: 75% !important;
+     min-width: 50rem !important;
+     max-width: 150rem !important;
+}
